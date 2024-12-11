@@ -17,9 +17,9 @@ builder.Services.AddDbContext<TwoPhaseCommitContext>(options =>
    options.UseSqlServer(connectionString);
 });
 
-builder.Services.AddHttpClient("OrderAPI", client => client.BaseAddress = new("https://localhost:7132"));
-builder.Services.AddHttpClient("PaymentAPI", client => client.BaseAddress = new("https://localhost:7067"));
-builder.Services.AddHttpClient("StockAPI", client => client.BaseAddress = new("https://localhost:7215"));
+builder.Services.AddHttpClient("Order.API", client => client.BaseAddress = new("https://localhost:7132"));
+builder.Services.AddHttpClient("Payment.API", client => client.BaseAddress = new("https://localhost:7067"));
+builder.Services.AddHttpClient("Stock.API", client => client.BaseAddress = new("https://localhost:7215"));
 
 var app = builder.Build();
 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Coordinator.Migrations
 {
     [DbContext(typeof(TwoPhaseCommitContext))]
-    [Migration("20241211144744_mig_!")]
-    partial class mig_
+    [Migration("20241211155616_mig_1")]
+    partial class mig_1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,6 +38,23 @@ namespace Coordinator.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Nodes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000001"),
+                            Name = "Order.API"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000002"),
+                            Name = "Payment.API"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000003"),
+                            Name = "Stock.API"
+                        });
                 });
 
             modelBuilder.Entity("Coordinator.Models.NodeState", b =>

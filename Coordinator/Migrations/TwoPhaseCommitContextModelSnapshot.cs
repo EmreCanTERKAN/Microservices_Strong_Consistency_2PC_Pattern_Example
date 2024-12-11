@@ -35,6 +35,23 @@ namespace Coordinator.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Nodes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000001"),
+                            Name = "Order.API"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000002"),
+                            Name = "Payment.API"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000003"),
+                            Name = "Stock.API"
+                        });
                 });
 
             modelBuilder.Entity("Coordinator.Models.NodeState", b =>
