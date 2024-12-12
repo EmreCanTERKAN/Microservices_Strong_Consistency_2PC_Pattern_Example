@@ -98,7 +98,7 @@ namespace Coordinator.Services
                     var result = bool.Parse(await response.Content.ReadAsStringAsync());
                     transactionNode.IsReady = result ? Enums.ReadyType.Ready : Enums.ReadyType.UnReady;
                 }
-                catch (Exception)
+                catch 
                 {
 
                     transactionNode.IsReady = Enums.ReadyType.UnReady;
